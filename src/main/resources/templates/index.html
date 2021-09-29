@@ -12,10 +12,10 @@
         <th>DESCRIPTION</th>
         <th>BRAND</th>
     </tr>
-    <tr th:each="product : ${products}">
-        <td th:text="${product.getProductId()}"/>
-        <td th:text="${product.getDescription()}"/>
-        <td th:text="${product.getBrand()}"/>
+    <tr th:each="productRepository : ${productEntities}">
+        <td th:text="${productRepository.getProductId()}"/>
+        <td th:text="${productRepository.getDescription()}"/>
+        <td th:text="${productRepository.getBrand()}"/>
     </tr>
 </table>
 

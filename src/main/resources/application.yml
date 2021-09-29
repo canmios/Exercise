@@ -1,7 +1,13 @@
+server:
+  port : 8081
 spring:
   application:
     name: interview
+key:
+  name: load
 
+scheduled:
+  load: 30000
 
   banner:
     charset: UTF-8

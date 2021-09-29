@@ -1,9 +1,6 @@
 package com.rei.interview.ui;
 
-import com.rei.interview.checkout.CartService;
-import com.rei.interview.inventory.InventoryService;
-import com.rei.interview.location.LocationService;
-import com.rei.interview.product.ProductService;
+import com.rei.interview.product.service.ProductService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -11,21 +8,11 @@ import org.springframework.web.bind.annotation.GetMapping;
 @Controller
 public class UiController {
 
-    private ProductService productService;
-    private LocationService locationService;
-    private InventoryService inventoryService;
-    private CartService cartService;
-
+    private final ProductService productService;
 
     public UiController(
-            ProductService productService,
-            LocationService locationService,
-            InventoryService inventoryService,
-            CartService cartService) {
+            ProductService productService) {
         this.productService = productService;
-        this.locationService = locationService;
-        this.inventoryService = inventoryService;
-        this.cartService = cartService;
 
     }
 
@@ -34,4 +21,5 @@ public class UiController {
         model.addAttribute("products", productService.getAllProducts());
         return "index";
     }
+
 }

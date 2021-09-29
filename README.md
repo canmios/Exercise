@@ -36,15 +36,15 @@ Overview
 -----------
 
 We have provided a few basic services for use in our e-commerce application: 
-- ProductService - get products by their id & verify if a product is valid
-- CartService - add a product to a cart
+- ProductService - get productEntities by their id & verify if a productRepository is valid
+- CartService - add a productRepository to a cart
 - LocationService - get nearby stores of a given location
-- InventoryService - checks if inventory exists for a product in a nearby store or in the distribution center
+- InventoryService - checks if inventory exists for a productRepository in a nearby store or in the distribution center
 - DistributionCenterService - checks if inventory exists in the distribution center
 
 #### REST Services ####
 
-We currently only have one web service for clients to interact with, our CartWebService. This service allows clients to add a product to a cart.
+We currently only have one web service for clients to interact with, our CartWebService. This service allows clients to add a productRepository to a cart.
 
 Cool, but what do I need to do...
 -----------
@@ -62,4 +62,26 @@ Things to keep in mind
 *  Please do not share this exercise with anyone but us.
 *  Have fun!
 
+Endpoints
+-----------
 
+``Cart``
+
+``POST http://localhost:8081/cart/``: verify the inventory for adding to the cart
+
+``Products``
+
+``GET http//localhost:8081/products``: return all products
+
+``GET http//localhost:8081/products/{id}``: return product by id
+
+``GET http//localhost:8081/products/brand/{brand}``: return products by brand
+
+``POST http//localhost:8081/products/``: create a new product
+
+Properties
+-----------
+
+``key.name:`` variable for handle the cache of inventory 
+
+``scheduled.load:`` variable for handle the time of schedule task 

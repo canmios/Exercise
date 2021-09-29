@@ -5,7 +5,7 @@ import java.util.concurrent.ConcurrentHashMap;
 
 public class Cache<K, V> extends ConcurrentHashMap<K, V> {
 
-    private static final int MAX_SIZE = 2;
+    private static final int MAX_SIZE = 30;
 
     @Override
     public V put(K key, V value) {
